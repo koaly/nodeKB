@@ -1,3 +1,4 @@
+//- Natthapong Somboonphattarakit 5910501950
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 const config = require('../config/database');
