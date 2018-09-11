@@ -6,6 +6,10 @@ let articleSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    authorID:{
+        type: String,
+        required: true
+    },
     author:{
         type: String,
         required: true
@@ -13,7 +17,24 @@ let articleSchema = mongoose.Schema({
     body:{
         type: String,
         required: true
+    },
+    goldMedal:{
+        type: Number,
+        default:0,
+        required: true
+    },
+    silverMedal:{
+        type: Number,
+        default:0,
+        required: true
+    },
+    bronzeMedal:{
+        type: Number,
+        default:0,
+        required: true
     }
 });
 
-let Article = module.exports = mongoose.model('Article', articleSchema);
+let Article = mongoose.model('Article', articleSchema);
+
+module.exports = Article;

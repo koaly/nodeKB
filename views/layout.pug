@@ -1,24 +1,40 @@
 doctype html
 html
     head
-        title Knowledgebase
+        title ASCORE!
         link(href="/bower_components/bootstrap/dist/css/bootstrap.css", rel="stylesheet")
-    body
+        link(href="/css/style.css", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet")
+    body(style="font-family: 'Kanit', sans-serif;")
         nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
-            a.navbar-brand(href='/') Knowledgebase
+            a.navbar-brand(href='/') ASCORE!
             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbars', aria-controls='navbars', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
             #navbars.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
                     li.nav-item
                         a.nav-link(href='/')
-                            | Home 
+                            | หน้าหลัก 
                             span.sr-only (current)
-                    li.nav-item
-                        a.nav-link(href='/articles/add') Add Article
+                    if user
+                        li.nav-item
+                            a.nav-link(href='/articles/add') เพิ่มบทความ
+                ul.navbar-nav.navbar-right
+                    if user
+                        li.nav-item 
+                            a.nav-link(href='/users/logout') ออกจากระบบ 
+                    else
+                        li.nav-item
+                            a.nav-link(href='/users/register') ลงทะเบียน
+                        li.nav-item
+                            a.nav-link(href='/users/login') เข้าสู่ระบบ
         br
 
         .container
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert alert-danger") #{error.msg}
             block content
             br
             hr
@@ -26,4 +42,5 @@ html
                 p Copyright &copy; 2018
         script(src="/bower_components/jquery/dist/jquery.js")
         script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+        script(src="/js/main.js")
         

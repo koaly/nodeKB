@@ -6,10 +6,20 @@ block content
         #form-group
             label Title:
             input.form-control(name="title", type="text")
-        #form-group
-            label Author:
-            input.form-control(name="author", type="text")
+        br
         #form-group
             label Body:
             textarea.form-control(name="body")
+        br
+        .form-row
+            .form-group.col-md-4
+                label Gold Medal:
+                input.form-control(name="goldMedal", type="number")
+            .form-group.col-md-4
+                label Silver Medal:
+                input.form-control(name="silverMedal", type="number")
+            .form-group.col-md-4
+                label Bronze Medal:
+                input.form-control(name="bronzeMedal", type="number")
+        br
         input.btn.btn-primary(type="submit", value="Submit")

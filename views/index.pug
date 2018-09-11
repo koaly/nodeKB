@@ -5,6 +5,31 @@ block content
     ul.list-group
         each article, i in articles
             li.list-group-item
-                a(href="/article/"+article._id)= article.title
-        
+                a(href="/articles/"+article._id)= article.title
+    br
+    h1 นับเหรียญทีมชาติไทย
+    ul.list-group
+        .form-row
+            .form-group.col-md-4
+                    .box
+                        img(src='https://i.imgur.com/xbdQJlO.png', height='250', width='250')
+                        br
+                        br
+                        h2= gold  
+                        br
+
+            .form-group.col-md-4
+                    .box
+                        img(src='https://i.imgur.com/rmpkBJX.png', height='250', width='250')
+                        br
+                        br
+                        h2= silver 
+                        br
+            .form-group.col-md-4
+                    .box
+                        img(src='https://i.imgur.com/bvX3ict.png', height='250', width='250')
+                        br
+                        br
+                        h2= bronze
+                        br
     
